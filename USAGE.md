@@ -8,8 +8,8 @@ import(
 	"context"
 	"log"
 	"github.com/speakeasy-sdks/golx_pets"
-	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
@@ -27,27 +27,13 @@ func main() {
         ID: petst.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
-            "provident",
-            "distinctio",
-            "quibusdam",
+            "corrupti",
         },
         Status: shared.PetStatusPending.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: petst.Int64(544883),
-                Name: petst.String("Ben Mueller"),
-            },
-            shared.Tag{
-                ID: petst.Int64(437587),
-                Name: petst.String("Raquel Bednar"),
-            },
-            shared.Tag{
-                ID: petst.Int64(383441),
-                Name: petst.String("Alexandra Schulist"),
-            },
-            shared.Tag{
-                ID: petst.Int64(568045),
-                Name: petst.String("Mrs. Sophie Smith MD"),
+                ID: petst.Int64(715190),
+                Name: petst.String("Stuart Stiedemann"),
             },
         },
     }, operationSecurity)

@@ -65,15 +65,18 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 // Some useful links:
 // - [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)
 // - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)
+//
 // http://swagger.io - Find out more about Swagger
 type Petst struct {
-	// Pet - Everything about your Pets
+	// Everything about your Pets
+	//
 	// http://swagger.io - Find out more
 	Pet *pet
-	// Store - Access to Petstore orders
+	// Access to Petstore orders
+	//
 	// http://swagger.io - Find out more about our store
 	Store *store
-	// User - Operations about user
+	// Operations about user
 	User *user
 
 	sdkConfiguration sdkConfiguration
@@ -123,8 +126,8 @@ func New(opts ...SDKOption) *Petst {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.17",
-			SDKVersion:        "0.1.0",
-			GenVersion:        "2.91.2",
+			SDKVersion:        "0.1.1",
+			GenVersion:        "2.101.0",
 		},
 	}
 	for _, opt := range opts {

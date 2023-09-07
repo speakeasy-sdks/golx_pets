@@ -144,7 +144,7 @@ func main() {
     s := petst.New()
 
     ctx := context.Background()
-    res, err := s.User.CreateUserRaw(ctx, []byte("quasi"))
+    res, err := s.User.CreateUserRaw(ctx, []byte("ipsum"))
     if err != nil {
         log.Fatal(err)
     }
@@ -189,36 +189,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.CreateUsersWithListInput(ctx, []shared.User{
-        shared.User{
-            Email: petst.String("john@email.com"),
-            FirstName: petst.String("John"),
-            ID: petst.Int64(10),
-            LastName: petst.String("James"),
-            Password: petst.String("12345"),
-            Phone: petst.String("12345"),
-            UserStatus: petst.Int(1),
-            Username: petst.String("theUser"),
-        },
-        shared.User{
-            Email: petst.String("john@email.com"),
-            FirstName: petst.String("John"),
-            ID: petst.Int64(10),
-            LastName: petst.String("James"),
-            Password: petst.String("12345"),
-            Phone: petst.String("12345"),
-            UserStatus: petst.Int(1),
-            Username: petst.String("theUser"),
-        },
-        shared.User{
-            Email: petst.String("john@email.com"),
-            FirstName: petst.String("John"),
-            ID: petst.Int64(10),
-            LastName: petst.String("James"),
-            Password: petst.String("12345"),
-            Phone: petst.String("12345"),
-            UserStatus: petst.Int(1),
-            Username: petst.String("theUser"),
-        },
         shared.User{
             Email: petst.String("john@email.com"),
             FirstName: petst.String("John"),
@@ -274,7 +244,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.DeleteUser(ctx, operations.DeleteUserRequest{
-        Username: "Weston_Thiel",
+        Username: "Keshaun32",
     })
     if err != nil {
         log.Fatal(err)
@@ -320,7 +290,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.GetUserByName(ctx, operations.GetUserByNameRequest{
-        Username: "Whitney.Bednar",
+        Username: "Lia.Cormier",
     })
     if err != nil {
         log.Fatal(err)
@@ -366,8 +336,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.LoginUser(ctx, operations.LoginUserRequest{
-        Password: petst.String("cum"),
-        Username: petst.String("Aiyana.Batz"),
+        Password: petst.String("natus"),
+        Username: petst.String("Gertrude_Welch44"),
     })
     if err != nil {
         log.Fatal(err)
@@ -466,7 +436,7 @@ func main() {
             UserStatus: petst.Int(1),
             Username: petst.String("theUser"),
         },
-        Username: "Wilfrid.Carter",
+        Username: "Floy_Moore",
     })
     if err != nil {
         log.Fatal(err)
@@ -523,7 +493,7 @@ func main() {
             UserStatus: petst.Int(1),
             Username: petst.String("theUser"),
         },
-        Username: "Jayden.Carter88",
+        Username: "Maxie96",
     })
     if err != nil {
         log.Fatal(err)
@@ -570,8 +540,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.UpdateUserRaw(ctx, operations.UpdateUserRawRequest{
-        RequestBody: []byte("commodi"),
-        Username: "Terrill69",
+        RequestBody: []byte("est"),
+        Username: "Madaline21",
     })
     if err != nil {
         log.Fatal(err)
