@@ -32,7 +32,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.Store.DeleteOrder(ctx, operations.DeleteOrderRequest{
@@ -78,7 +78,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
     operationSecurity := operations.GetInventorySecurity{
             APIKey: "",
         }
@@ -125,7 +125,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.Store.GetOrderByID(ctx, operations.GetOrderByIDRequest{
@@ -172,14 +172,14 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.Store.PlaceOrderForm(ctx, shared.Order{
-        Complete: petst.Bool(false),
-        ID: petst.Int64(10),
-        PetID: petst.Int64(198772),
-        Quantity: petst.Int(7),
+        Complete: golx_pets.Bool(false),
+        ID: golx_pets.Int64(10),
+        PetID: golx_pets.Int64(198772),
+        Quantity: golx_pets.Int(7),
         ShipDate: types.MustTimeFromString("2022-10-24T23:43:42.369Z"),
         Status: shared.OrderStatusApproved.ToPointer(),
     })
@@ -224,14 +224,14 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.Store.PlaceOrderJSON(ctx, shared.Order{
-        Complete: petst.Bool(false),
-        ID: petst.Int64(10),
-        PetID: petst.Int64(198772),
-        Quantity: petst.Int(7),
+        Complete: golx_pets.Bool(false),
+        ID: golx_pets.Int64(10),
+        PetID: golx_pets.Int64(198772),
+        Quantity: golx_pets.Int(7),
         ShipDate: types.MustTimeFromString("2020-10-16T01:47:24.760Z"),
         Status: shared.OrderStatusApproved.ToPointer(),
     })
@@ -276,7 +276,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.Store.PlaceOrderRaw(ctx, []byte("esse"))

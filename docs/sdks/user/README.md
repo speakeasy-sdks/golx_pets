@@ -35,18 +35,18 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.User.CreateUserForm(ctx, shared.User{
-        Email: petst.String("john@email.com"),
-        FirstName: petst.String("John"),
-        ID: petst.Int64(10),
-        LastName: petst.String("James"),
-        Password: petst.String("12345"),
-        Phone: petst.String("12345"),
-        UserStatus: petst.Int(1),
-        Username: petst.String("theUser"),
+        Email: golx_pets.String("john@email.com"),
+        FirstName: golx_pets.String("John"),
+        ID: golx_pets.Int64(10),
+        LastName: golx_pets.String("James"),
+        Password: golx_pets.String("12345"),
+        Phone: golx_pets.String("12345"),
+        UserStatus: golx_pets.Int(1),
+        Username: golx_pets.String("theUser"),
     })
     if err != nil {
         log.Fatal(err)
@@ -88,18 +88,18 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.User.CreateUserJSON(ctx, shared.User{
-        Email: petst.String("john@email.com"),
-        FirstName: petst.String("John"),
-        ID: petst.Int64(10),
-        LastName: petst.String("James"),
-        Password: petst.String("12345"),
-        Phone: petst.String("12345"),
-        UserStatus: petst.Int(1),
-        Username: petst.String("theUser"),
+        Email: golx_pets.String("john@email.com"),
+        FirstName: golx_pets.String("John"),
+        ID: golx_pets.Int64(10),
+        LastName: golx_pets.String("James"),
+        Password: golx_pets.String("12345"),
+        Phone: golx_pets.String("12345"),
+        UserStatus: golx_pets.Int(1),
+        Username: golx_pets.String("theUser"),
     })
     if err != nil {
         log.Fatal(err)
@@ -141,7 +141,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.User.CreateUserRaw(ctx, []byte("ipsum"))
@@ -185,19 +185,19 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.User.CreateUsersWithListInput(ctx, []shared.User{
         shared.User{
-            Email: petst.String("john@email.com"),
-            FirstName: petst.String("John"),
-            ID: petst.Int64(10),
-            LastName: petst.String("James"),
-            Password: petst.String("12345"),
-            Phone: petst.String("12345"),
-            UserStatus: petst.Int(1),
-            Username: petst.String("theUser"),
+            Email: golx_pets.String("john@email.com"),
+            FirstName: golx_pets.String("John"),
+            ID: golx_pets.Int64(10),
+            LastName: golx_pets.String("James"),
+            Password: golx_pets.String("12345"),
+            Phone: golx_pets.String("12345"),
+            UserStatus: golx_pets.Int(1),
+            Username: golx_pets.String("theUser"),
         },
     })
     if err != nil {
@@ -240,7 +240,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.User.DeleteUser(ctx, operations.DeleteUserRequest{
@@ -286,7 +286,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.User.GetUserByName(ctx, operations.GetUserByNameRequest{
@@ -332,12 +332,12 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.User.LoginUser(ctx, operations.LoginUserRequest{
-        Password: petst.String("natus"),
-        Username: petst.String("Gertrude_Welch44"),
+        Password: golx_pets.String("natus"),
+        Username: golx_pets.String("Gertrude_Welch44"),
     })
     if err != nil {
         log.Fatal(err)
@@ -378,7 +378,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.User.LogoutUser(ctx)
@@ -422,19 +422,19 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.User.UpdateUserForm(ctx, operations.UpdateUserFormRequest{
         User: &shared.User{
-            Email: petst.String("john@email.com"),
-            FirstName: petst.String("John"),
-            ID: petst.Int64(10),
-            LastName: petst.String("James"),
-            Password: petst.String("12345"),
-            Phone: petst.String("12345"),
-            UserStatus: petst.Int(1),
-            Username: petst.String("theUser"),
+            Email: golx_pets.String("john@email.com"),
+            FirstName: golx_pets.String("John"),
+            ID: golx_pets.Int64(10),
+            LastName: golx_pets.String("James"),
+            Password: golx_pets.String("12345"),
+            Phone: golx_pets.String("12345"),
+            UserStatus: golx_pets.Int(1),
+            Username: golx_pets.String("theUser"),
         },
         Username: "Floy_Moore",
     })
@@ -479,19 +479,19 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.User.UpdateUserJSON(ctx, operations.UpdateUserJSONRequest{
         User: &shared.User{
-            Email: petst.String("john@email.com"),
-            FirstName: petst.String("John"),
-            ID: petst.Int64(10),
-            LastName: petst.String("James"),
-            Password: petst.String("12345"),
-            Phone: petst.String("12345"),
-            UserStatus: petst.Int(1),
-            Username: petst.String("theUser"),
+            Email: golx_pets.String("john@email.com"),
+            FirstName: golx_pets.String("John"),
+            ID: golx_pets.Int64(10),
+            LastName: golx_pets.String("James"),
+            Password: golx_pets.String("12345"),
+            Phone: golx_pets.String("12345"),
+            UserStatus: golx_pets.Int(1),
+            Username: golx_pets.String("theUser"),
         },
         Username: "Maxie96",
     })
@@ -536,7 +536,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
 
     ctx := context.Background()
     res, err := s.User.UpdateUserRaw(ctx, operations.UpdateUserRawRequest{

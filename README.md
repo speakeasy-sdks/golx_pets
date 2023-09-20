@@ -31,7 +31,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
     operationSecurity := operations.AddPetFormSecurity{
             PetstoreAuth: "",
         }
@@ -39,10 +39,10 @@ func main() {
     ctx := context.Background()
     res, err := s.Pet.AddPetForm(ctx, shared.Pet{
         Category: &shared.Category{
-            ID: petst.Int64(1),
-            Name: petst.String("Dogs"),
+            ID: golx_pets.Int64(1),
+            Name: golx_pets.String("Dogs"),
         },
-        ID: petst.Int64(10),
+        ID: golx_pets.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
             "corrupti",
@@ -50,8 +50,8 @@ func main() {
         Status: shared.PetStatusPending.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: petst.Int64(715190),
-                Name: petst.String("Stuart Stiedemann"),
+                ID: golx_pets.Int64(715190),
+                Name: golx_pets.String("Stuart Stiedemann"),
             },
         },
     }, operationSecurity)

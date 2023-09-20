@@ -39,7 +39,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
     operationSecurity := operations.AddPetFormSecurity{
             PetstoreAuth: "",
         }
@@ -47,10 +47,10 @@ func main() {
     ctx := context.Background()
     res, err := s.Pet.AddPetForm(ctx, shared.Pet{
         Category: &shared.Category{
-            ID: petst.Int64(1),
-            Name: petst.String("Dogs"),
+            ID: golx_pets.Int64(1),
+            Name: golx_pets.String("Dogs"),
         },
-        ID: petst.Int64(10),
+        ID: golx_pets.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
             "vel",
@@ -58,8 +58,8 @@ func main() {
         Status: shared.PetStatusPending.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: petst.Int64(645894),
-                Name: petst.String("Willie Gulgowski DVM"),
+                ID: golx_pets.Int64(645894),
+                Name: golx_pets.String("Willie Gulgowski DVM"),
             },
         },
     }, operationSecurity)
@@ -105,7 +105,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
     operationSecurity := operations.AddPetJSONSecurity{
             PetstoreAuth: "",
         }
@@ -113,10 +113,10 @@ func main() {
     ctx := context.Background()
     res, err := s.Pet.AddPetJSON(ctx, shared.Pet{
         Category: &shared.Category{
-            ID: petst.Int64(1),
-            Name: petst.String("Dogs"),
+            ID: golx_pets.Int64(1),
+            Name: golx_pets.String("Dogs"),
         },
-        ID: petst.Int64(10),
+        ID: golx_pets.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
             "tempora",
@@ -124,8 +124,8 @@ func main() {
         Status: shared.PetStatusPending.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: petst.Int64(477665),
-                Name: petst.String("Irving Lehner"),
+                ID: golx_pets.Int64(477665),
+                Name: golx_pets.String("Irving Lehner"),
             },
         },
     }, operationSecurity)
@@ -171,7 +171,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
     operationSecurity := operations.AddPetRawSecurity{
             PetstoreAuth: "",
         }
@@ -219,14 +219,14 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
     operationSecurity := operations.DeletePetSecurity{
             PetstoreAuth: "",
         }
 
     ctx := context.Background()
     res, err := s.Pet.DeletePet(ctx, operations.DeletePetRequest{
-        APIKey: petst.String("recusandae"),
+        APIKey: golx_pets.String("recusandae"),
         PetID: 836079,
     }, operationSecurity)
     if err != nil {
@@ -270,7 +270,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
     operationSecurity := operations.FindPetsByStatusSecurity{
             PetstoreAuth: "",
         }
@@ -320,7 +320,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
     operationSecurity := operations.FindPetsByTagsSecurity{
             PetstoreAuth: "",
         }
@@ -372,9 +372,9 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
     operationSecurity := operations.GetPetByIDSecurity{
-            APIKey: petst.String(""),
+            APIKey: golx_pets.String(""),
         }
 
     ctx := context.Background()
@@ -422,16 +422,16 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
     operationSecurity := operations.UpdatePetWithFormSecurity{
             PetstoreAuth: "",
         }
 
     ctx := context.Background()
     res, err := s.Pet.UpdatePetWithForm(ctx, operations.UpdatePetWithFormRequest{
-        Name: petst.String("Christopher Hills"),
+        Name: golx_pets.String("Christopher Hills"),
         PetID: 778157,
-        Status: petst.String("odit"),
+        Status: golx_pets.String("odit"),
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -475,7 +475,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
     operationSecurity := operations.UpdatePetFormSecurity{
             PetstoreAuth: "",
         }
@@ -483,10 +483,10 @@ func main() {
     ctx := context.Background()
     res, err := s.Pet.UpdatePetForm(ctx, shared.Pet{
         Category: &shared.Category{
-            ID: petst.Int64(1),
-            Name: petst.String("Dogs"),
+            ID: golx_pets.Int64(1),
+            Name: golx_pets.String("Dogs"),
         },
-        ID: petst.Int64(10),
+        ID: golx_pets.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
             "at",
@@ -494,8 +494,8 @@ func main() {
         Status: shared.PetStatusSold.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: petst.Int64(978619),
-                Name: petst.String("Bernadette Schmidt"),
+                ID: golx_pets.Int64(978619),
+                Name: golx_pets.String("Bernadette Schmidt"),
             },
         },
     }, operationSecurity)
@@ -541,7 +541,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
     operationSecurity := operations.UpdatePetJSONSecurity{
             PetstoreAuth: "",
         }
@@ -549,10 +549,10 @@ func main() {
     ctx := context.Background()
     res, err := s.Pet.UpdatePetJSON(ctx, shared.Pet{
         Category: &shared.Category{
-            ID: petst.Int64(1),
-            Name: petst.String("Dogs"),
+            ID: golx_pets.Int64(1),
+            Name: golx_pets.String("Dogs"),
         },
-        ID: petst.Int64(10),
+        ID: golx_pets.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
             "porro",
@@ -560,8 +560,8 @@ func main() {
         Status: shared.PetStatusSold.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: petst.Int64(118274),
-                Name: petst.String("Luke McCullough"),
+                ID: golx_pets.Int64(118274),
+                Name: golx_pets.String("Luke McCullough"),
             },
         },
     }, operationSecurity)
@@ -607,7 +607,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
     operationSecurity := operations.UpdatePetRawSecurity{
             PetstoreAuth: "",
         }
@@ -655,7 +655,7 @@ import(
 )
 
 func main() {
-    s := petst.New()
+    s := golx_pets.New()
     operationSecurity := operations.UploadFileSecurity{
             PetstoreAuth: "",
         }
@@ -663,7 +663,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Pet.UploadFile(ctx, operations.UploadFileRequest{
         RequestBody: []byte("optio"),
-        AdditionalMetadata: petst.String("totam"),
+        AdditionalMetadata: golx_pets.String("totam"),
         PetID: 105907,
     }, operationSecurity)
     if err != nil {
