@@ -7,24 +7,24 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
-	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
-    s := golx_pets.New()
-    operationSecurity := operations.AddPetFormSecurity{
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
             PetstoreAuth: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Pet.AddPetForm(ctx, shared.Pet{
         Category: &shared.Category{
-            ID: golx_pets.Int64(1),
-            Name: golx_pets.String("Dogs"),
+            ID: golxpets.Int64(1),
+            Name: golxpets.String("Dogs"),
         },
-        ID: golx_pets.Int64(10),
+        ID: golxpets.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
             "corrupti",
@@ -32,11 +32,11 @@ func main() {
         Status: shared.PetStatusPending.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: golx_pets.Int64(715190),
-                Name: golx_pets.String("Stuart Stiedemann"),
+                ID: golxpets.Int64(715190),
+                Name: golxpets.String("Stuart Stiedemann"),
             },
         },
-    }, operationSecurity)
+    })
     if err != nil {
         log.Fatal(err)
     }

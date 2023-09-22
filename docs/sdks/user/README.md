@@ -30,23 +30,27 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.User.CreateUserForm(ctx, shared.User{
-        Email: golx_pets.String("john@email.com"),
-        FirstName: golx_pets.String("John"),
-        ID: golx_pets.Int64(10),
-        LastName: golx_pets.String("James"),
-        Password: golx_pets.String("12345"),
-        Phone: golx_pets.String("12345"),
-        UserStatus: golx_pets.Int(1),
-        Username: golx_pets.String("theUser"),
+        Email: golxpets.String("john@email.com"),
+        FirstName: golxpets.String("John"),
+        ID: golxpets.Int64(10),
+        LastName: golxpets.String("James"),
+        Password: golxpets.String("12345"),
+        Phone: golxpets.String("12345"),
+        UserStatus: golxpets.Int(1),
+        Username: golxpets.String("theUser"),
     })
     if err != nil {
         log.Fatal(err)
@@ -83,23 +87,27 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.User.CreateUserJSON(ctx, shared.User{
-        Email: golx_pets.String("john@email.com"),
-        FirstName: golx_pets.String("John"),
-        ID: golx_pets.Int64(10),
-        LastName: golx_pets.String("James"),
-        Password: golx_pets.String("12345"),
-        Phone: golx_pets.String("12345"),
-        UserStatus: golx_pets.Int(1),
-        Username: golx_pets.String("theUser"),
+        Email: golxpets.String("john@email.com"),
+        FirstName: golxpets.String("John"),
+        ID: golxpets.Int64(10),
+        LastName: golxpets.String("James"),
+        Password: golxpets.String("12345"),
+        Phone: golxpets.String("12345"),
+        UserStatus: golxpets.Int(1),
+        Username: golxpets.String("theUser"),
     })
     if err != nil {
         log.Fatal(err)
@@ -136,15 +144,19 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
-    res, err := s.User.CreateUserRaw(ctx, []byte("ipsum"))
+    res, err := s.User.CreateUserRaw(ctx, []byte("natus"))
     if err != nil {
         log.Fatal(err)
     }
@@ -180,24 +192,28 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.User.CreateUsersWithListInput(ctx, []shared.User{
         shared.User{
-            Email: golx_pets.String("john@email.com"),
-            FirstName: golx_pets.String("John"),
-            ID: golx_pets.Int64(10),
-            LastName: golx_pets.String("James"),
-            Password: golx_pets.String("12345"),
-            Phone: golx_pets.String("12345"),
-            UserStatus: golx_pets.Int(1),
-            Username: golx_pets.String("theUser"),
+            Email: golxpets.String("john@email.com"),
+            FirstName: golxpets.String("John"),
+            ID: golxpets.Int64(10),
+            LastName: golxpets.String("James"),
+            Password: golxpets.String("12345"),
+            Phone: golxpets.String("12345"),
+            UserStatus: golxpets.Int(1),
+            Username: golxpets.String("theUser"),
         },
     })
     if err != nil {
@@ -235,16 +251,21 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.User.DeleteUser(ctx, operations.DeleteUserRequest{
-        Username: "Keshaun32",
+        Username: "Gertrude_Welch44",
     })
     if err != nil {
         log.Fatal(err)
@@ -281,16 +302,21 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.User.GetUserByName(ctx, operations.GetUserByNameRequest{
-        Username: "Lia.Cormier",
+        Username: "Floy_Moore",
     })
     if err != nil {
         log.Fatal(err)
@@ -327,17 +353,22 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.User.LoginUser(ctx, operations.LoginUserRequest{
-        Password: golx_pets.String("natus"),
-        Username: golx_pets.String("Gertrude_Welch44"),
+        Password: golxpets.String("quidem"),
+        Username: golxpets.String("Baby_Beier65"),
     })
     if err != nil {
         log.Fatal(err)
@@ -374,11 +405,16 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.User.LogoutUser(ctx)
@@ -416,27 +452,31 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
-	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.User.UpdateUserForm(ctx, operations.UpdateUserFormRequest{
         User: &shared.User{
-            Email: golx_pets.String("john@email.com"),
-            FirstName: golx_pets.String("John"),
-            ID: golx_pets.Int64(10),
-            LastName: golx_pets.String("James"),
-            Password: golx_pets.String("12345"),
-            Phone: golx_pets.String("12345"),
-            UserStatus: golx_pets.Int(1),
-            Username: golx_pets.String("theUser"),
+            Email: golxpets.String("john@email.com"),
+            FirstName: golxpets.String("John"),
+            ID: golxpets.Int64(10),
+            LastName: golxpets.String("James"),
+            Password: golxpets.String("12345"),
+            Phone: golxpets.String("12345"),
+            UserStatus: golxpets.Int(1),
+            Username: golxpets.String("theUser"),
         },
-        Username: "Floy_Moore",
+        Username: "Marcos35",
     })
     if err != nil {
         log.Fatal(err)
@@ -473,27 +513,31 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
-	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.User.UpdateUserJSON(ctx, operations.UpdateUserJSONRequest{
         User: &shared.User{
-            Email: golx_pets.String("john@email.com"),
-            FirstName: golx_pets.String("John"),
-            ID: golx_pets.Int64(10),
-            LastName: golx_pets.String("James"),
-            Password: golx_pets.String("12345"),
-            Phone: golx_pets.String("12345"),
-            UserStatus: golx_pets.Int(1),
-            Username: golx_pets.String("theUser"),
+            Email: golxpets.String("john@email.com"),
+            FirstName: golxpets.String("John"),
+            ID: golxpets.Int64(10),
+            LastName: golxpets.String("James"),
+            Password: golxpets.String("12345"),
+            Phone: golxpets.String("12345"),
+            UserStatus: golxpets.Int(1),
+            Username: golxpets.String("theUser"),
         },
-        Username: "Maxie96",
+        Username: "Braulio60",
     })
     if err != nil {
         log.Fatal(err)
@@ -530,18 +574,22 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
-	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.User.UpdateUserRaw(ctx, operations.UpdateUserRawRequest{
-        RequestBody: []byte("est"),
-        Username: "Madaline21",
+        RequestBody: []byte("nemo"),
+        Username: "Era43",
     })
     if err != nil {
         log.Fatal(err)

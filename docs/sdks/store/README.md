@@ -27,16 +27,21 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Store.DeleteOrder(ctx, operations.DeleteOrderRequest{
-        OrderID: 414662,
+        OrderID: 135218,
     })
     if err != nil {
         log.Fatal(err)
@@ -73,12 +78,12 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New()
     operationSecurity := operations.GetInventorySecurity{
             APIKey: "",
         }
@@ -120,16 +125,21 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Store.GetOrderByID(ctx, operations.GetOrderByIDRequest{
-        OrderID: 473600,
+        OrderID: 18789,
     })
     if err != nil {
         log.Fatal(err)
@@ -166,21 +176,25 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 	"github.com/speakeasy-sdks/golx_pets/pkg/types"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Store.PlaceOrderForm(ctx, shared.Order{
-        Complete: golx_pets.Bool(false),
-        ID: golx_pets.Int64(10),
-        PetID: golx_pets.Int64(198772),
-        Quantity: golx_pets.Int(7),
-        ShipDate: types.MustTimeFromString("2022-10-24T23:43:42.369Z"),
+        Complete: golxpets.Bool(false),
+        ID: golxpets.Int64(10),
+        PetID: golxpets.Int64(198772),
+        Quantity: golxpets.Int(7),
+        ShipDate: types.MustTimeFromString("2022-05-20T13:30:46.463Z"),
         Status: shared.OrderStatusApproved.ToPointer(),
     })
     if err != nil {
@@ -218,21 +232,25 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 	"github.com/speakeasy-sdks/golx_pets/pkg/types"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Store.PlaceOrderJSON(ctx, shared.Order{
-        Complete: golx_pets.Bool(false),
-        ID: golx_pets.Int64(10),
-        PetID: golx_pets.Int64(198772),
-        Quantity: golx_pets.Int(7),
-        ShipDate: types.MustTimeFromString("2020-10-16T01:47:24.760Z"),
+        Complete: golxpets.Bool(false),
+        ID: golxpets.Int64(10),
+        PetID: golxpets.Int64(198772),
+        Quantity: golxpets.Int(7),
+        ShipDate: types.MustTimeFromString("2022-05-22T14:02:28.908Z"),
         Status: shared.OrderStatusApproved.ToPointer(),
     })
     if err != nil {
@@ -270,16 +288,20 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 	"github.com/speakeasy-sdks/golx_pets/pkg/types"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
+            PetstoreAuth: "",
+        }),
+    )
 
     ctx := context.Background()
-    res, err := s.Store.PlaceOrderRaw(ctx, []byte("esse"))
+    res, err := s.Store.PlaceOrderRaw(ctx, []byte("dolor"))
     if err != nil {
         log.Fatal(err)
     }

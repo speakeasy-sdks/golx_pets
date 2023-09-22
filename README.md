@@ -17,44 +17,42 @@ go get github.com/speakeasy-sdks/golx_pets
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```go
 package main
 
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
-	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
-    s := golx_pets.New()
-    operationSecurity := operations.AddPetFormSecurity{
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
             PetstoreAuth: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Pet.AddPetForm(ctx, shared.Pet{
         Category: &shared.Category{
-            ID: golx_pets.Int64(1),
-            Name: golx_pets.String("Dogs"),
+            ID: golxpets.Int64(1),
+            Name: golxpets.String("Dogs"),
         },
-        ID: golx_pets.Int64(10),
+        ID: golxpets.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
-            "corrupti",
+            "vel",
         },
         Status: shared.PetStatusPending.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: golx_pets.Int64(715190),
-                Name: golx_pets.String("Stuart Stiedemann"),
+                ID: golxpets.Int64(645894),
+                Name: golxpets.String("Willie Gulgowski DVM"),
             },
         },
-    }, operationSecurity)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -108,6 +106,38 @@ func main() {
 * [UpdateUserJSON](docs/sdks/user/README.md#updateuserjson) - Update user
 * [UpdateUserRaw](docs/sdks/user/README.md#updateuserraw) - Update user
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `Next` method that can be called to pull down the next group of results. If the
+return value of `Next` is `nil`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+
+
+<!-- End Pagination -->
+
+
+
+<!-- Start Go Types -->
+
+<!-- End Go Types -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 

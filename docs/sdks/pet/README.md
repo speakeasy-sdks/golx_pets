@@ -33,36 +33,36 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
-	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
-    s := golx_pets.New()
-    operationSecurity := operations.AddPetFormSecurity{
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
             PetstoreAuth: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Pet.AddPetForm(ctx, shared.Pet{
         Category: &shared.Category{
-            ID: golx_pets.Int64(1),
-            Name: golx_pets.String("Dogs"),
+            ID: golxpets.Int64(1),
+            Name: golxpets.String("Dogs"),
         },
-        ID: golx_pets.Int64(10),
+        ID: golxpets.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
-            "vel",
+            "tempora",
         },
         Status: shared.PetStatusPending.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: golx_pets.Int64(645894),
-                Name: golx_pets.String("Willie Gulgowski DVM"),
+                ID: golxpets.Int64(477665),
+                Name: golxpets.String("Irving Lehner"),
             },
         },
-    }, operationSecurity)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -75,11 +75,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
-| `request`                                                                      | [shared.Pet](../../models/shared/pet.md)                                       | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `security`                                                                     | [operations.AddPetFormSecurity](../../models/operations/addpetformsecurity.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+| `request`                                             | [shared.Pet](../../models/shared/pet.md)              | :heavy_check_mark:                                    | The request object to use for the request.            |
 
 
 ### Response
@@ -99,36 +98,36 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
-	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
-    s := golx_pets.New()
-    operationSecurity := operations.AddPetJSONSecurity{
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
             PetstoreAuth: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Pet.AddPetJSON(ctx, shared.Pet{
         Category: &shared.Category{
-            ID: golx_pets.Int64(1),
-            Name: golx_pets.String("Dogs"),
+            ID: golxpets.Int64(1),
+            Name: golxpets.String("Dogs"),
         },
-        ID: golx_pets.Int64(10),
+        ID: golxpets.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
-            "tempora",
+            "nisi",
         },
-        Status: shared.PetStatusPending.ToPointer(),
+        Status: shared.PetStatusSold.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: golx_pets.Int64(477665),
-                Name: golx_pets.String("Irving Lehner"),
+                ID: golxpets.Int64(836079),
+                Name: golxpets.String("Erica Bogisich III"),
             },
         },
-    }, operationSecurity)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -141,11 +140,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
-| `request`                                                                      | [shared.Pet](../../models/shared/pet.md)                                       | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `security`                                                                     | [operations.AddPetJSONSecurity](../../models/operations/addpetjsonsecurity.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+| `request`                                             | [shared.Pet](../../models/shared/pet.md)              | :heavy_check_mark:                                    | The request object to use for the request.            |
 
 
 ### Response
@@ -165,19 +163,19 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
-	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
-    s := golx_pets.New()
-    operationSecurity := operations.AddPetRawSecurity{
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
             PetstoreAuth: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
-    res, err := s.Pet.AddPetRaw(ctx, []byte("nisi"), operationSecurity)
+    res, err := s.Pet.AddPetRaw(ctx, []byte("repellendus"))
     if err != nil {
         log.Fatal(err)
     }
@@ -190,11 +188,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `ctx`                                                                        | [context.Context](https://pkg.go.dev/context#Context)                        | :heavy_check_mark:                                                           | The context to use for the request.                                          |
-| `request`                                                                    | [[]byte](../../models//.md)                                                  | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
-| `security`                                                                   | [operations.AddPetRawSecurity](../../models/operations/addpetrawsecurity.md) | :heavy_check_mark:                                                           | The security requirements to use for the request.                            |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+| `request`                                             | [[]byte](../../models//.md)                           | :heavy_check_mark:                                    | The request object to use for the request.            |
 
 
 ### Response
@@ -214,21 +211,23 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
 )
 
 func main() {
-    s := golx_pets.New()
-    operationSecurity := operations.DeletePetSecurity{
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
             PetstoreAuth: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Pet.DeletePet(ctx, operations.DeletePetRequest{
-        APIKey: golx_pets.String("recusandae"),
-        PetID: 836079,
-    }, operationSecurity)
+        APIKey: golxpets.String("sapiente"),
+        PetID: 778157,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -241,11 +240,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `ctx`                                                                        | [context.Context](https://pkg.go.dev/context#Context)                        | :heavy_check_mark:                                                           | The context to use for the request.                                          |
-| `request`                                                                    | [operations.DeletePetRequest](../../models/operations/deletepetrequest.md)   | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
-| `security`                                                                   | [operations.DeletePetSecurity](../../models/operations/deletepetsecurity.md) | :heavy_check_mark:                                                           | The security requirements to use for the request.                            |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `ctx`                                                                      | [context.Context](https://pkg.go.dev/context#Context)                      | :heavy_check_mark:                                                         | The context to use for the request.                                        |
+| `request`                                                                  | [operations.DeletePetRequest](../../models/operations/deletepetrequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
 
 
 ### Response
@@ -265,20 +263,22 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
 )
 
 func main() {
-    s := golx_pets.New()
-    operationSecurity := operations.FindPetsByStatusSecurity{
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
             PetstoreAuth: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Pet.FindPetsByStatus(ctx, operations.FindPetsByStatusRequest{
         Status: operations.FindPetsByStatusStatusAvailable.ToPointer(),
-    }, operationSecurity)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -291,11 +291,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
-| `request`                                                                                  | [operations.FindPetsByStatusRequest](../../models/operations/findpetsbystatusrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.FindPetsByStatusSecurity](../../models/operations/findpetsbystatussecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [operations.FindPetsByStatusRequest](../../models/operations/findpetsbystatusrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
@@ -315,22 +314,24 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
 )
 
 func main() {
-    s := golx_pets.New()
-    operationSecurity := operations.FindPetsByTagsSecurity{
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
             PetstoreAuth: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Pet.FindPetsByTags(ctx, operations.FindPetsByTagsRequest{
         Tags: []string{
-            "quis",
+            "at",
         },
-    }, operationSecurity)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -343,11 +344,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
-| `request`                                                                              | [operations.FindPetsByTagsRequest](../../models/operations/findpetsbytagsrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.FindPetsByTagsSecurity](../../models/operations/findpetsbytagssecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.FindPetsByTagsRequest](../../models/operations/findpetsbytagsrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -367,19 +367,19 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
 )
 
 func main() {
-    s := golx_pets.New()
+    s := golxpets.New()
     operationSecurity := operations.GetPetByIDSecurity{
-            APIKey: golx_pets.String(""),
+            APIKey: golxpets.String(""),
         }
 
     ctx := context.Background()
     res, err := s.Pet.GetPetByID(ctx, operations.GetPetByIDRequest{
-        PetID: 87129,
+        PetID: 870088,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -417,22 +417,24 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
 )
 
 func main() {
-    s := golx_pets.New()
-    operationSecurity := operations.UpdatePetWithFormSecurity{
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
             PetstoreAuth: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Pet.UpdatePetWithForm(ctx, operations.UpdatePetWithFormRequest{
-        Name: golx_pets.String("Christopher Hills"),
-        PetID: 778157,
-        Status: golx_pets.String("odit"),
-    }, operationSecurity)
+        Name: golxpets.String("Javier Schmidt"),
+        PetID: 520478,
+        Status: golxpets.String("porro"),
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -445,11 +447,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
-| `request`                                                                                    | [operations.UpdatePetWithFormRequest](../../models/operations/updatepetwithformrequest.md)   | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `security`                                                                                   | [operations.UpdatePetWithFormSecurity](../../models/operations/updatepetwithformsecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
+| `request`                                                                                  | [operations.UpdatePetWithFormRequest](../../models/operations/updatepetwithformrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 
 
 ### Response
@@ -469,36 +470,36 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
-	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
-    s := golx_pets.New()
-    operationSecurity := operations.UpdatePetFormSecurity{
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
             PetstoreAuth: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Pet.UpdatePetForm(ctx, shared.Pet{
         Category: &shared.Category{
-            ID: golx_pets.Int64(1),
-            Name: golx_pets.String("Dogs"),
+            ID: golxpets.Int64(1),
+            Name: golxpets.String("Dogs"),
         },
-        ID: golx_pets.Int64(10),
+        ID: golxpets.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
-            "at",
+            "dolorum",
         },
-        Status: shared.PetStatusSold.ToPointer(),
+        Status: shared.PetStatusAvailable.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: golx_pets.Int64(978619),
-                Name: golx_pets.String("Bernadette Schmidt"),
+                ID: golxpets.Int64(720633),
+                Name: golxpets.String("Seth Conroy"),
             },
         },
-    }, operationSecurity)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -511,11 +512,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [shared.Pet](../../models/shared/pet.md)                                             | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `security`                                                                           | [operations.UpdatePetFormSecurity](../../models/operations/updatepetformsecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+| `request`                                             | [shared.Pet](../../models/shared/pet.md)              | :heavy_check_mark:                                    | The request object to use for the request.            |
 
 
 ### Response
@@ -535,36 +535,36 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
-	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
-    s := golx_pets.New()
-    operationSecurity := operations.UpdatePetJSONSecurity{
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
             PetstoreAuth: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Pet.UpdatePetJSON(ctx, shared.Pet{
         Category: &shared.Category{
-            ID: golx_pets.Int64(1),
-            Name: golx_pets.String("Dogs"),
+            ID: golxpets.Int64(1),
+            Name: golxpets.String("Dogs"),
         },
-        ID: golx_pets.Int64(10),
+        ID: golxpets.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
-            "porro",
+            "optio",
         },
-        Status: shared.PetStatusSold.ToPointer(),
+        Status: shared.PetStatusPending.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: golx_pets.Int64(118274),
-                Name: golx_pets.String("Luke McCullough"),
+                ID: golxpets.Int64(105907),
+                Name: golxpets.String("Tanya Gleason"),
             },
         },
-    }, operationSecurity)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -577,11 +577,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [shared.Pet](../../models/shared/pet.md)                                             | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `security`                                                                           | [operations.UpdatePetJSONSecurity](../../models/operations/updatepetjsonsecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+| `request`                                             | [shared.Pet](../../models/shared/pet.md)              | :heavy_check_mark:                                    | The request object to use for the request.            |
 
 
 ### Response
@@ -601,19 +600,19 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
-	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
-    s := golx_pets.New()
-    operationSecurity := operations.UpdatePetRawSecurity{
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
             PetstoreAuth: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
-    res, err := s.Pet.UpdatePetRaw(ctx, []byte("hic"), operationSecurity)
+    res, err := s.Pet.UpdatePetRaw(ctx, []byte("cum"))
     if err != nil {
         log.Fatal(err)
     }
@@ -626,11 +625,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
-| `request`                                                                          | [[]byte](../../models//.md)                                                        | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `security`                                                                         | [operations.UpdatePetRawSecurity](../../models/operations/updatepetrawsecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+| `request`                                             | [[]byte](../../models//.md)                           | :heavy_check_mark:                                    | The request object to use for the request.            |
 
 
 ### Response
@@ -650,22 +648,24 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/golx_pets"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
 )
 
 func main() {
-    s := golx_pets.New()
-    operationSecurity := operations.UploadFileSecurity{
+    s := golxpets.New(
+        golxpets.WithSecurity(shared.Security{
             PetstoreAuth: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Pet.UploadFile(ctx, operations.UploadFileRequest{
-        RequestBody: []byte("optio"),
-        AdditionalMetadata: golx_pets.String("totam"),
-        PetID: 105907,
-    }, operationSecurity)
+        RequestBody: []byte("esse"),
+        AdditionalMetadata: golxpets.String("ipsum"),
+        PetID: 568434,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -678,11 +678,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
-| `request`                                                                      | [operations.UploadFileRequest](../../models/operations/uploadfilerequest.md)   | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `security`                                                                     | [operations.UploadFileSecurity](../../models/operations/uploadfilesecurity.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `ctx`                                                                        | [context.Context](https://pkg.go.dev/context#Context)                        | :heavy_check_mark:                                                           | The context to use for the request.                                          |
+| `request`                                                                    | [operations.UploadFileRequest](../../models/operations/uploadfilerequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
 
 
 ### Response
