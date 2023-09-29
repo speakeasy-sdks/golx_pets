@@ -1,4 +1,5 @@
 # Pet
+(*Pet*)
 
 ## Overview
 
@@ -53,13 +54,13 @@ func main() {
         ID: golxpets.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
-            "tempora",
+            "yellow",
         },
-        Status: shared.PetStatusPending.ToPointer(),
+        Status: shared.PetStatusSold.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: golxpets.Int64(477665),
-                Name: golxpets.String("Irving Lehner"),
+                ID: golxpets.Int64(837177),
+                Name: golxpets.String("North Awesome"),
             },
         },
     })
@@ -118,13 +119,13 @@ func main() {
         ID: golxpets.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
-            "nisi",
+            "male",
         },
         Status: shared.PetStatusSold.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: golxpets.Int64(836079),
-                Name: golxpets.String("Erica Bogisich III"),
+                ID: golxpets.Int64(122057),
+                Name: golxpets.String("whiteboard Mobility Cis"),
             },
         },
     })
@@ -175,7 +176,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Pet.AddPetRaw(ctx, []byte("repellendus"))
+    res, err := s.Pet.AddPetRaw(ctx, []byte("W`6wC8ntZ\"))
     if err != nil {
         log.Fatal(err)
     }
@@ -225,8 +226,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Pet.DeletePet(ctx, operations.DeletePetRequest{
-        APIKey: golxpets.String("sapiente"),
-        PetID: 778157,
+        APIKey: golxpets.String("Northwest female"),
+        PetID: 979259,
     })
     if err != nil {
         log.Fatal(err)
@@ -277,7 +278,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Pet.FindPetsByStatus(ctx, operations.FindPetsByStatusRequest{
-        Status: operations.FindPetsByStatusStatusAvailable.ToPointer(),
+        Status: operations.FindPetsByStatusStatusSold.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -329,7 +330,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Pet.FindPetsByTags(ctx, operations.FindPetsByTagsRequest{
         Tags: []string{
-            "at",
+            "engage",
         },
     })
     if err != nil {
@@ -379,7 +380,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Pet.GetPetByID(ctx, operations.GetPetByIDRequest{
-        PetID: 870088,
+        PetID: 504151,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -431,9 +432,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Pet.UpdatePetWithForm(ctx, operations.UpdatePetWithFormRequest{
-        Name: golxpets.String("Javier Schmidt"),
-        PetID: 520478,
-        Status: golxpets.String("porro"),
+        Name: golxpets.String("XSS"),
+        PetID: 505104,
+        Status: golxpets.String("Awesome"),
     })
     if err != nil {
         log.Fatal(err)
@@ -490,13 +491,13 @@ func main() {
         ID: golxpets.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
-            "dolorum",
+            "Associate",
         },
-        Status: shared.PetStatusAvailable.ToPointer(),
+        Status: shared.PetStatusPending.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: golxpets.Int64(720633),
-                Name: golxpets.String("Seth Conroy"),
+                ID: golxpets.Int64(47695),
+                Name: golxpets.String("azure Ringgit Analyst"),
             },
         },
     })
@@ -555,13 +556,13 @@ func main() {
         ID: golxpets.Int64(10),
         Name: "doggie",
         PhotoUrls: []string{
-            "optio",
+            "engage",
         },
         Status: shared.PetStatusPending.ToPointer(),
         Tags: []shared.Tag{
             shared.Tag{
-                ID: golxpets.Int64(105907),
-                Name: golxpets.String("Tanya Gleason"),
+                ID: golxpets.Int64(474658),
+                Name: golxpets.String("Wooden along"),
             },
         },
     })
@@ -612,7 +613,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Pet.UpdatePetRaw(ctx, []byte("cum"))
+    res, err := s.Pet.UpdatePetRaw(ctx, []byte(":Pnf><u_<@"))
     if err != nil {
         log.Fatal(err)
     }
@@ -662,9 +663,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Pet.UploadFile(ctx, operations.UploadFileRequest{
-        RequestBody: []byte("esse"),
-        AdditionalMetadata: golxpets.String("ipsum"),
-        PetID: 568434,
+        RequestBody: []byte("U?WWKB{5@q"),
+        AdditionalMetadata: golxpets.String("through ew"),
+        PetID: 712651,
     })
     if err != nil {
         log.Fatal(err)
