@@ -41,7 +41,7 @@ func main() {
 		ID:   golxpets.Int64(10),
 		Name: "doggie",
 		PhotoUrls: []string{
-			"yellow",
+			"string",
 		},
 		Tags: []shared.Tag{
 			shared.Tag{},
