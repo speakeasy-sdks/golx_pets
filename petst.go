@@ -13,7 +13,7 @@ import (
 
 // ServerList contains the list of servers available to the SDK
 var ServerList = []string{
-	"/api/v3",
+	"https:///api/v3",
 }
 
 // HTTPClient provides an interface for suplying the SDK with a custom HTTP client
@@ -75,13 +75,13 @@ type Petst struct {
 	// Everything about your Pets
 	//
 	// http://swagger.io - Find out more
-	Pet *pet
+	Pet *Pet
 	// Access to Petstore orders
 	//
 	// http://swagger.io - Find out more about our store
-	Store *store
+	Store *Store
 	// Operations about user
-	User *user
+	User *User
 
 	sdkConfiguration sdkConfiguration
 }
@@ -151,9 +151,9 @@ func New(opts ...SDKOption) *Petst {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.17",
-			SDKVersion:        "0.6.0",
-			GenVersion:        "2.169.0",
-			UserAgent:         "speakeasy-sdk/go 0.6.0 2.169.0 1.0.17 github.com/speakeasy-sdks/golx_pets",
+			SDKVersion:        "0.7.0",
+			GenVersion:        "2.181.1",
+			UserAgent:         "speakeasy-sdk/go 0.7.0 2.181.1 1.0.17 github.com/speakeasy-sdks/golx_pets",
 		},
 	}
 	for _, opt := range opts {

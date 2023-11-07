@@ -1,5 +1,5 @@
 # Store
-(*Store*)
+(*.Store*)
 
 ## Overview
 
@@ -85,7 +85,9 @@ func main() {
     s := golxpets.New()
 
 
-    operationSecurity := ""
+    operationSecurity := operations.GetInventorySecurity{
+            APIKey: "",
+        }
 
     ctx := context.Background()
     res, err := s.Store.GetInventory(ctx, operationSecurity)
@@ -93,7 +95,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetInventory200ApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }
@@ -187,7 +189,7 @@ func main() {
         ID: golxpets.Int64(10),
         PetID: golxpets.Int64(198772),
         Quantity: golxpets.Int(7),
-        Status: shared.OrderStatusApproved.ToPointer(),
+        Status: shared.StatusApproved.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -238,7 +240,7 @@ func main() {
         ID: golxpets.Int64(10),
         PetID: golxpets.Int64(198772),
         Quantity: golxpets.Int(7),
-        Status: shared.OrderStatusApproved.ToPointer(),
+        Status: shared.StatusApproved.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -285,7 +287,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Store.PlaceOrderRaw(ctx, &[]byte("UlJXn(4[x^"))
+    res, err := s.Store.PlaceOrderRaw(ctx, &[]byte("0xcB9dC14dEe"))
     if err != nil {
         log.Fatal(err)
     }

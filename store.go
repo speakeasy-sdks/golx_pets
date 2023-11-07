@@ -15,22 +15,22 @@ import (
 	"strings"
 )
 
-// store - Access to Petstore orders
+// Store - Access to Petstore orders
 //
 // http://swagger.io - Find out more about our store
-type store struct {
+type Store struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newStore(sdkConfig sdkConfiguration) *store {
-	return &store{
+func newStore(sdkConfig sdkConfiguration) *Store {
+	return &Store{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteOrder - Delete purchase order by ID
 // For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
-func (s *store) DeleteOrder(ctx context.Context, request operations.DeleteOrderRequest) (*operations.DeleteOrderResponse, error) {
+func (s *Store) DeleteOrder(ctx context.Context, request operations.DeleteOrderRequest) (*operations.DeleteOrderResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/store/order/{orderId}", request, nil)
 	if err != nil {
@@ -84,7 +84,7 @@ func (s *store) DeleteOrder(ctx context.Context, request operations.DeleteOrderR
 
 // GetInventory - Returns pet inventories by status
 // Returns a map of status codes to quantities
-func (s *store) GetInventory(ctx context.Context, security operations.GetInventorySecurity) (*operations.GetInventoryResponse, error) {
+func (s *Store) GetInventory(ctx context.Context, security operations.GetInventorySecurity) (*operations.GetInventoryResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/store/inventory"
 
@@ -128,7 +128,7 @@ func (s *store) GetInventory(ctx context.Context, security operations.GetInvento
 				return nil, err
 			}
 
-			res.GetInventory200ApplicationJSONObject = out
+			res.Object = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -143,7 +143,7 @@ func (s *store) GetInventory(ctx context.Context, security operations.GetInvento
 
 // GetOrderByID - Find purchase order by ID
 // For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions.
-func (s *store) GetOrderByID(ctx context.Context, request operations.GetOrderByIDRequest, opts ...operations.Option) (*operations.GetOrderByIDResponse, error) {
+func (s *Store) GetOrderByID(ctx context.Context, request operations.GetOrderByIDRequest, opts ...operations.Option) (*operations.GetOrderByIDResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -226,7 +226,7 @@ func (s *store) GetOrderByID(ctx context.Context, request operations.GetOrderByI
 
 // PlaceOrderForm - Place an order for a pet
 // Place a new order in the store
-func (s *store) PlaceOrderForm(ctx context.Context, request *shared.Order) (*operations.PlaceOrderFormResponse, error) {
+func (s *Store) PlaceOrderForm(ctx context.Context, request *shared.Order) (*operations.PlaceOrderFormResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/store/order"
 
@@ -294,7 +294,7 @@ func (s *store) PlaceOrderForm(ctx context.Context, request *shared.Order) (*ope
 
 // PlaceOrderJSON - Place an order for a pet
 // Place a new order in the store
-func (s *store) PlaceOrderJSON(ctx context.Context, request *shared.Order) (*operations.PlaceOrderJSONResponse, error) {
+func (s *Store) PlaceOrderJSON(ctx context.Context, request *shared.Order) (*operations.PlaceOrderJSONResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/store/order"
 
@@ -362,7 +362,7 @@ func (s *store) PlaceOrderJSON(ctx context.Context, request *shared.Order) (*ope
 
 // PlaceOrderRaw - Place an order for a pet
 // Place a new order in the store
-func (s *store) PlaceOrderRaw(ctx context.Context, request []byte) (*operations.PlaceOrderRawResponse, error) {
+func (s *Store) PlaceOrderRaw(ctx context.Context, request []byte) (*operations.PlaceOrderRawResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/store/order"
 

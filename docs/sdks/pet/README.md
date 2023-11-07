@@ -1,5 +1,5 @@
 # Pet
-(*Pet*)
+(*.Pet*)
 
 ## Overview
 
@@ -162,7 +162,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Pet.AddPetRaw(ctx, []byte("W`6wC8ntZ\"))
+    res, err := s.Pet.AddPetRaw(ctx, []byte("0xcf5E85CDde"))
     if err != nil {
         log.Fatal(err)
     }
@@ -263,7 +263,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Pets != nil {
+    if res.TwoHundredApplicationJSONClasses != nil {
         // handle response
     }
 }
@@ -314,7 +314,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Pets != nil {
+    if res.TwoHundredApplicationJSONClasses != nil {
         // handle response
     }
 }
@@ -574,7 +574,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Pet.UpdatePetRaw(ctx, []byte(":Pnf><u_<@"))
+    res, err := s.Pet.UpdatePetRaw(ctx, []byte("0x6bCA76De67"))
     if err != nil {
         log.Fatal(err)
     }
@@ -622,7 +622,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Pet.UploadFile(ctx, operations.UploadFileRequest{
-        RequestBody: []byte("U?WWKB{5@q"),
+        RequestBody: []byte("0xc7cca7F47D"),
         PetID: 621158,
     })
     if err != nil {

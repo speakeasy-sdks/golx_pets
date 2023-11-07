@@ -1,5 +1,5 @@
 # User
-(*User*)
+(*.User*)
 
 ## Overview
 
@@ -151,7 +151,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.User.CreateUserRaw(ctx, &[]byte("i5Xui)x^_Y"))
+    res, err := s.User.CreateUserRaw(ctx, &[]byte("0xB4dDB1Eeed"))
     if err != nil {
         log.Fatal(err)
     }
@@ -358,7 +358,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.LoginUser200ApplicationJSONString != nil {
+    if res.TwoHundredApplicationJSONRes != nil {
         // handle response
     }
 }
@@ -564,7 +564,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.UpdateUserRaw(ctx, operations.UpdateUserRawRequest{
-        RequestBody: []byte("b4q0<\{RD/"),
+        RequestBody: []byte("0xf4D36eFb83"),
         Username: "Eleonore2",
     })
     if err != nil {
