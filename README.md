@@ -63,7 +63,7 @@ func main() {
 ## Available Resources and Operations
 
 
-### [.Pet](docs/sdks/pet/README.md)
+### [Pet](docs/sdks/pet/README.md)
 
 * [AddPetForm](docs/sdks/pet/README.md#addpetform) - Add a new pet to the store
 * [AddPetJSON](docs/sdks/pet/README.md#addpetjson) - Add a new pet to the store
@@ -78,7 +78,7 @@ func main() {
 * [UpdatePetRaw](docs/sdks/pet/README.md#updatepetraw) - Update an existing pet
 * [UploadFile](docs/sdks/pet/README.md#uploadfile) - uploads an image
 
-### [.Store](docs/sdks/store/README.md)
+### [Store](docs/sdks/store/README.md)
 
 * [DeleteOrder](docs/sdks/store/README.md#deleteorder) - Delete purchase order by ID
 * [GetInventory](docs/sdks/store/README.md#getinventory) - Returns pet inventories by status
@@ -87,7 +87,7 @@ func main() {
 * [PlaceOrderJSON](docs/sdks/store/README.md#placeorderjson) - Place an order for a pet
 * [PlaceOrderRaw](docs/sdks/store/README.md#placeorderraw) - Place an order for a pet
 
-### [.User](docs/sdks/user/README.md)
+### [User](docs/sdks/user/README.md)
 
 * [CreateUserForm](docs/sdks/user/README.md#createuserform) - Create user
 * [CreateUserJSON](docs/sdks/user/README.md#createuserjson) - Create user
@@ -131,9 +131,56 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 
+## Example
+
+```go
+package main
+
+import (
+	"context"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := golxpets.New(
+		golxpets.WithSecurity(""),
+	)
+
+	ctx := context.Background()
+	res, err := s.Pet.AddPetForm(ctx, shared.Pet{
+		Category: &shared.Category{
+			ID:   golxpets.Int64(1),
+			Name: golxpets.String("Dogs"),
+		},
+		ID:   golxpets.Int64(10),
+		Name: "doggie",
+		PhotoUrls: []string{
+			"string",
+		},
+		Tags: []shared.Tag{
+			shared.Tag{},
+		},
+	})
+	if err != nil {
+
+		var e *sdkerrors.SDKError
+		if errors.As(err, &e) {
+			// handle error
+			log.Fatal(e.Error())
+		}
+	}
+}
+
+```
 <!-- End Error Handling -->
 
 
@@ -275,12 +322,11 @@ This can be a convenient way to configure timeouts, cookies, proxies, custom hea
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name           | Type           | Scheme         |
 | -------------- | -------------- | -------------- |
@@ -331,7 +377,7 @@ func main() {
 
 ## Per-Operation Security Schemes
 
-Some operations in your SDK require the security scheme to be specified at the request level. For example:
+Some operations in this SDK require the security scheme to be specified at the request level. For example:
 
 ```go
 package main
