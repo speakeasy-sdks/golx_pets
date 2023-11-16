@@ -10,7 +10,9 @@ import (
 )
 
 func main() {
-	s := golxpets.New()
+	s := golxpets.New(
+		golxpets.WithSecurity(""),
+	)
 
 	ctx := context.Background()
 	res, err := s.Pet.AddPetForm(ctx, shared.Pet{

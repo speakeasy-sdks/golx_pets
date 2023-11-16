@@ -30,7 +30,9 @@ import (
 )
 
 func main() {
-	s := golxpets.New()
+	s := golxpets.New(
+		golxpets.WithSecurity(""),
+	)
 
 	ctx := context.Background()
 	res, err := s.Pet.AddPetForm(ctx, shared.Pet{
@@ -144,13 +146,17 @@ package main
 
 import (
 	"context"
+	"errors"
 	golxpets "github.com/speakeasy-sdks/golx_pets"
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 	"log"
 )
 
 func main() {
-	s := golxpets.New()
+	s := golxpets.New(
+		golxpets.WithSecurity(""),
+	)
 
 	ctx := context.Background()
 	res, err := s.Pet.AddPetForm(ctx, shared.Pet{
@@ -208,6 +214,7 @@ import (
 func main() {
 	s := golxpets.New(
 		golxpets.WithServerIndex(0),
+		golxpets.WithSecurity(""),
 	)
 
 	ctx := context.Background()
@@ -253,6 +260,7 @@ import (
 func main() {
 	s := golxpets.New(
 		golxpets.WithServerURL("https:///api/v3"),
+		golxpets.WithSecurity(""),
 	)
 
 	ctx := context.Background()

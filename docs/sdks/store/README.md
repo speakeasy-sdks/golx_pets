@@ -26,11 +26,12 @@ For valid response try integer IDs with value < 1000. Anything above 1000 or non
 package main
 
 import(
-	"context"
-	"log"
-	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
+	"context"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
@@ -77,10 +78,10 @@ Returns a map of status codes to quantities
 package main
 
 import(
-	"context"
-	"log"
 	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
+	"context"
+	"log"
 )
 
 func main() {
@@ -128,11 +129,11 @@ For valid response try integer IDs with value <= 5 or > 10. Other values will ge
 package main
 
 import(
-	"context"
-	"log"
-	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
+	"context"
 	"github.com/speakeasy-sdks/golx_pets/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -179,10 +180,10 @@ Place a new order in the store
 package main
 
 import(
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"context"
 	"log"
-	golxpets "github.com/speakeasy-sdks/golx_pets"
-	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
@@ -232,10 +233,10 @@ Place a new order in the store
 package main
 
 import(
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"context"
 	"log"
-	golxpets "github.com/speakeasy-sdks/golx_pets"
-	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
@@ -285,10 +286,10 @@ Place a new order in the store
 package main
 
 import(
+	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
+	golxpets "github.com/speakeasy-sdks/golx_pets"
 	"context"
 	"log"
-	golxpets "github.com/speakeasy-sdks/golx_pets"
-	"github.com/speakeasy-sdks/golx_pets/pkg/models/shared"
 )
 
 func main() {
