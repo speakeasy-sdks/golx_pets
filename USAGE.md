@@ -11,7 +11,7 @@ import (
 
 func main() {
 	s := golxpets.New(
-		golxpets.WithSecurity(""),
+		golxpets.WithSecurity("Bearer <YOUR_ACCESS_TOKEN_HERE>"),
 	)
 
 	ctx := context.Background()

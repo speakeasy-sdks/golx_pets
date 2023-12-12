@@ -32,7 +32,7 @@ import (
 
 func main() {
 	s := golxpets.New(
-		golxpets.WithSecurity(""),
+		golxpets.WithSecurity("Bearer <YOUR_ACCESS_TOKEN_HERE>"),
 	)
 
 	ctx := context.Background()
@@ -143,7 +143,7 @@ import (
 
 func main() {
 	s := golxpets.New(
-		golxpets.WithSecurity(""),
+		golxpets.WithSecurity("Bearer <YOUR_ACCESS_TOKEN_HERE>"),
 	)
 
 	ctx := context.Background()
@@ -202,7 +202,7 @@ import (
 func main() {
 	s := golxpets.New(
 		golxpets.WithServerIndex(0),
-		golxpets.WithSecurity(""),
+		golxpets.WithSecurity("Bearer <YOUR_ACCESS_TOKEN_HERE>"),
 	)
 
 	ctx := context.Background()
@@ -248,7 +248,7 @@ import (
 func main() {
 	s := golxpets.New(
 		golxpets.WithServerURL("https:///api/v3"),
-		golxpets.WithSecurity(""),
+		golxpets.WithSecurity("Bearer <YOUR_ACCESS_TOKEN_HERE>"),
 	)
 
 	ctx := context.Background()
@@ -335,7 +335,7 @@ import (
 
 func main() {
 	s := golxpets.New(
-		golxpets.WithSecurity(""),
+		golxpets.WithSecurity("Bearer <YOUR_ACCESS_TOKEN_HERE>"),
 	)
 
 	ctx := context.Background()
@@ -381,7 +381,7 @@ func main() {
 	s := golxpets.New()
 
 	operationSecurity := operations.GetPetByIDSecurity{
-		APIKey: golxpets.String(""),
+		APIKey: golxpets.String("<YOUR_API_KEY_HERE>"),
 	}
 
 	ctx := context.Background()

@@ -149,3 +149,13 @@ Based on:
 - [go v0.7.5] .
 ### Releases
 - [Go v0.7.5] https://github.com/speakeasy-sdks/golx_pets/releases/tag/v0.7.5 - .
+
+## 2023-12-12 00:56:41
+### Changes
+Based on:
+- OpenAPI Doc 1.0.17 
+- Speakeasy CLI 1.126.0 (2.213.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v0.8.0] .
+### Releases
+- [Go v0.8.0] https://github.com/speakeasy-sdks/golx_pets/releases/tag/v0.8.0 - .
