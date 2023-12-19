@@ -2,23 +2,25 @@ configVersion: 1.0.0
 management:
   docChecksum: 56e67259387d8230eb8003fc2e4b31e3
   docVersion: 1.0.17
-  speakeasyVersion: 1.126.0
-  generationVersion: 2.213.3
+  speakeasyVersion: 1.127.0
+  generationVersion: 2.220.0
 generation:
   comments: {}
   sdkClassName: petst
   repoURL: https://github.com/speakeasy-sdks/golx_pets.git
   usageSnippets:
     optionalPropertyRendering: withExample
+  fixes:
+    nameResolutionDec2023: false
 features:
   go:
     constsAndDefaults: 0.1.2
-    core: 3.2.0
+    core: 3.2.2
     globalSecurity: 2.82.3
     globalServerURLs: 2.82.1
     methodSecurity: 2.82.1
 go:
-  version: 0.8.0
+  version: 0.8.1
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:
