@@ -4,9 +4,9 @@ management:
   docChecksum: 56e67259387d8230eb8003fc2e4b31e3
   docVersion: 1.0.17
   speakeasyVersion: internal
-  generationVersion: 2.250.2
-  releaseVersion: 0.9.0
-  configChecksum: 17555044edc9c757cdb180dd4dbf4731
+  generationVersion: 2.253.0
+  releaseVersion: 0.9.1
+  configChecksum: fca46db9b65d06058f9e9880fee45a11
   repoURL: https://github.com/speakeasy-sdks/golx_pets.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/golx_pets

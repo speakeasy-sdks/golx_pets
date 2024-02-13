@@ -158,7 +158,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.User.CreateUserRaw(ctx, &[]byte("0xB4dDB1Eeed"))
+    res, err := s.User.CreateUserRaw(ctx, []byte("0xB4dDB1Eeed"))
     if err != nil {
         log.Fatal(err)
     }
@@ -206,7 +206,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.User.CreateUsersWithListInput(ctx, &[]shared.User{
+    res, err := s.User.CreateUsersWithListInput(ctx, []shared.User{
         shared.User{
             Email: golxpets.String("john@email.com"),
             FirstName: golxpets.String("John"),
@@ -468,16 +468,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.UpdateUserForm(ctx, operations.UpdateUserFormRequest{
-        User: &shared.User{
-            Email: golxpets.String("john@email.com"),
-            FirstName: golxpets.String("John"),
-            ID: golxpets.Int64(10),
-            LastName: golxpets.String("James"),
-            Password: golxpets.String("12345"),
-            Phone: golxpets.String("12345"),
-            UserStatus: golxpets.Int(1),
-            Username: golxpets.String("theUser"),
-        },
         Username: "Bo_Lynch4",
     })
     if err != nil {
@@ -530,16 +520,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.UpdateUserJSON(ctx, operations.UpdateUserJSONRequest{
-        User: &shared.User{
-            Email: golxpets.String("john@email.com"),
-            FirstName: golxpets.String("John"),
-            ID: golxpets.Int64(10),
-            LastName: golxpets.String("James"),
-            Password: golxpets.String("12345"),
-            Phone: golxpets.String("12345"),
-            UserStatus: golxpets.Int(1),
-            Username: golxpets.String("theUser"),
-        },
         Username: "Alanna_Waters81",
     })
     if err != nil {
@@ -592,8 +572,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.UpdateUserRaw(ctx, operations.UpdateUserRawRequest{
-        RequestBody: []byte("0xf4D36eFb83"),
-        Username: "Eleonore2",
+        Username: "Maximus.DuBuque29",
     })
     if err != nil {
         log.Fatal(err)
