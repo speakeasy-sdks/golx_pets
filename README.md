@@ -40,7 +40,7 @@ func main() {
 		ID:   golxpets.Int64(10),
 		Name: "doggie",
 		PhotoUrls: []string{
-			"string",
+			"<value>",
 		},
 	})
 	if err != nil {
@@ -144,7 +144,7 @@ func main() {
 		ID:   golxpets.Int64(10),
 		Name: "doggie",
 		PhotoUrls: []string{
-			"string",
+			"<value>",
 		},
 	})
 	if err != nil {
@@ -196,7 +196,7 @@ func main() {
 		ID:   golxpets.Int64(10),
 		Name: "doggie",
 		PhotoUrls: []string{
-			"string",
+			"<value>",
 		},
 	})
 	if err != nil {
@@ -235,7 +235,7 @@ func main() {
 		ID:   golxpets.Int64(10),
 		Name: "doggie",
 		PhotoUrls: []string{
-			"string",
+			"<value>",
 		},
 	})
 	if err != nil {
@@ -315,7 +315,7 @@ func main() {
 		ID:   golxpets.Int64(10),
 		Name: "doggie",
 		PhotoUrls: []string{
-			"string",
+			"<value>",
 		},
 	})
 	if err != nil {
