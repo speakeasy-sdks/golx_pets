@@ -161,9 +161,9 @@ func New(opts ...SDKOption) *Petst {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.17",
-			SDKVersion:        "0.10.2",
-			GenVersion:        "2.272.4",
-			UserAgent:         "speakeasy-sdk/go 0.10.2 2.272.4 1.0.17 github.com/speakeasy-sdks/golx_pets",
+			SDKVersion:        "0.10.3",
+			GenVersion:        "2.272.7",
+			UserAgent:         "speakeasy-sdk/go 0.10.3 2.272.7 1.0.17 github.com/speakeasy-sdks/golx_pets",
 			Hooks:             hooks.New(),
 		},
 	}
